@@ -1,19 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>CineFlow Creator Registration</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body>
-    <header>
-      <h1>Join the CineFlow Creator Program</h1>
+
+  <body class="bg-gray-100 p-6">
+
+    <!-- Header -->
+    <header class="p-6 bg-black text-white rounded-4xl mb-6">
+      <h1 class="text-3xl text-center font-bold">
+        Join the CineFlow Creator Program
+      </h1>
     </header>
 
-    <main>
-      <section id="promo">
-        <h2>Welcome Video</h2>
+    <main class="max-w-5xl mx-auto">
+
+      <!-- Video Section -->
+      <section id="promo" class="mb-8">
+        <h2 class="text-2xl text-center mt-4 mb-4 font-bold">
+          Welcome Video
+        </h2>
+
         <video
-          width="100%"
+          class="rounded-4xl w-full shadow-lg"
           controls
           poster="assets/images/welcome.jpg"
         >
@@ -21,3 +34,235 @@
           Your browser does not support the video tag.
         </video>
       </section>
+
+      <!-- Registration Form -->
+      <section
+        id="registration"
+        class="bg-white p-8 rounded-4xl shadow-lg"
+      >
+
+        <form class="space-y-8">
+
+          <!-- Personal Information -->
+          <fieldset class="border border-gray-300 p-6 rounded-3xl">
+
+            <legend class="font-bold text-xl px-2">
+              Personal Information
+            </legend>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+
+              <!-- Full Name -->
+              <div class="flex flex-col">
+                <label for="fname" class="mb-2 font-semibold">
+                  Full Name
+                </label>
+
+                <input
+                  type="text"
+                  id="fname"
+                  name="fname"
+                  placeholder="Enter your full names"
+                  class="border border-gray-300 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-black"
+                />
+              </div>
+
+              <!-- Email -->
+              <div class="flex flex-col">
+                <label for="email" class="mb-2 font-semibold">
+                  Email
+                </label>
+
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="Enter your email"
+                  class="border border-gray-300 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-black"
+                />
+              </div>
+
+              <!-- Date -->
+              <div class="flex flex-col">
+                <label for="date" class="mb-2 font-semibold">
+                  Date of Birth
+                </label>
+
+                <input
+                  type="date"
+                  id="date"
+                  name="date"
+                  required
+                  class="border border-gray-300 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-black"
+                />
+              </div>
+
+              <!-- Referral -->
+              <div class="flex flex-col">
+                <label for="referral" class="mb-2 font-semibold">
+                  How did you hear about us?
+                </label>
+
+                <select
+                  id="referral"
+                  name="referral"
+                  class="border border-gray-300 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-black"
+                >
+                  <option disabled selected>Select an option</option>
+                  <option value="social media">Social Media</option>
+                  <option value="friend">Friend</option>
+                  <option value="search">Search Engine</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <!-- Password -->
+              <div class="flex flex-col md:col-span-2">
+                <label for="password" class="mb-2 font-semibold">
+                  Password
+                </label>
+
+                <input
+                  type="password"
+                  id="password"
+                  placeholder="Enter your password"
+                  class="border border-gray-300 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-black"
+                />
+              </div>
+
+            </div>
+          </fieldset>
+
+          <!-- Channel Details -->
+          <fieldset class="border border-gray-300 p-6 rounded-3xl">
+
+            <legend class="font-bold text-xl px-2">
+              Channel Details
+            </legend>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+
+              <!-- Username -->
+              <div class="flex flex-col">
+                <label for="username" class="mb-2 font-semibold">
+                  Username
+                </label>
+
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  placeholder="Enter username"
+                  pattern="[A-Za-z0-9]+"
+                  required
+                  class="border border-gray-300 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-black"
+                />
+              </div>
+
+              <!-- Upload Volume -->
+              <div class="flex flex-col">
+                <label for="uploads" class="mb-2 font-semibold">
+                  Expected Weekly Upload Volume
+                </label>
+
+                <input
+                  type="range"
+                  id="uploads"
+                  name="uploads"
+                  min="0"
+                  max="10"
+                  class="w-full"
+                />
+              </div>
+
+              <!-- Profile -->
+              <div class="flex flex-col md:col-span-2">
+                <label for="profile" class="mb-2 font-semibold">
+                  Profile Picture
+                </label>
+
+                <input
+                  type="file"
+                  id="profile"
+                  name="profile"
+                  accept=".jpg,.png"
+                  required
+                  class="border border-gray-300 p-3 rounded-xl"
+                />
+              </div>
+
+            </div>
+
+            <!-- Genres -->
+            <div class="mt-6">
+              <p class="font-semibold mb-4">
+                Select Content Genres
+              </p>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+                <label class="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    id="beauty"
+                    name="genre"
+                    value="Beauty"
+                    class="w-4 h-4"
+                  />
+                  Beauty
+                </label>
+
+                <label class="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    id="dance"
+                    name="genre"
+                    value="Dance"
+                    class="w-4 h-4"
+                  />
+                  Dance
+                </label>
+
+                <label class="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    id="lifestyle"
+                    name="genre"
+                    value="Lifestyle"
+                    class="w-4 h-4"
+                  />
+                  Lifestyle & Travel
+                </label>
+
+              </div>
+            </div>
+
+          </fieldset>
+
+          <!-- Buttons -->
+          <div class="flex flex-col md:flex-row gap-4 justify-center">
+
+            <button
+              type="submit"
+              class="bg-pink-900 text-white px-6 py-3 rounded-2xl hover:bg-gray-800 transition"
+            >
+              Register Account
+            </button>
+
+            <button
+              type="reset"
+              class="bg-gray-300 px-6 py-3 rounded-2xl hover:bg-gray-400 transition"
+            >
+              Clear Form
+            </button>
+
+          </div>
+
+        </form>
+      </section>
+
+    </main>
+
+  </body>
+</html>
